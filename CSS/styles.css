@@ -42,37 +42,32 @@ body {
     text-align: center;
 }
 
-.art-showcase {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    padding: 40px 20px;
-}
-
-.artwork {
+.slideshow-container {
+    max-width: 800px;
     position: relative;
-    width: 300px;
-    border-radius: 8px;
+    margin: 40px auto;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    background-color: #fff;
 }
 
-.artwork img {
+.slide {
+    display: none;
+}
+
+.slide img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-.overlay {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 4px;
+.fade {
+    animation: fadeEffect 1.5s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4}
+    to { opacity: 1;}
 }
 
 .footer {
