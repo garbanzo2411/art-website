@@ -59,32 +59,57 @@
             </div>
         </footer>
         <script>
-            let index = 0;
-            const slides = document.querySelectorAll(".slide");
+        document.addEventListener("DOMContentLoaded", () => {
             const track = document.getElementById("slideshow-track");
+            const slides = document.querySelectorAll(".slide");
             const bg = document.getElementById("slideshow-bg");
-            
-            function updateSlide() {
-                index = (index + 1) % slides.length;
-                const imgSrc = slides[index].querySelector("img").src;
-                track.style.transform = `translateX(-${index * 33.333}%)`;
-                
-                bg.style.backgroundImage = `url('${imgSrc}')`;
-                document.body.style.setProperty("--bg-url", `url('${imgSrc}')`);
-                document.body.style.setProperty("--bg-color", `url('${imgSrc}')`);
+            let index = 0;
+            let isTransitioning = false;
 
-                document.querySelector("body").style.setProperty("--bg-url", `url('${imgSrc}')`);
-                document.styleSheets[0].insertRule(`body::before { background-image: url('${imgSrc}') !important; }`, 0);
+            // Clone the first slide and append it to the end
+            const firstClone = slides[0].cloneNode(true);
+            track.appendChild(firstClone);
+
+            const totalSlides = slides.length; // original slides count
+
+            function goToSlide(i, animate = true) {
+                if (animate) {
+                    track.style.transition = "transform 1s ease-in-out";
+                } else {
+                    track.style.transition = "none";
             }
-            
-            document.addEventListener("DOMContentLoaded", () => {
-              // Set initial background
-              const firstImg = slides[0].querySelector("img").src;
-              bg.style.backgroundImage = `url('${firstImg}')`;
-            
-              setInterval(updateSlide, 4000); // Slide every 4s
-            });
-            </script>
+            track.style.transform = `translateX(-${i * (100 / 3)}%)`;
+            // Update background
+            const imgSrc = track.children[i].querySelector("img").src;
+            bg.style.backgroundImage = `url('${imgSrc}')`;
+        }
+
+        function nextSlide() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            index++;
+            goToSlide(index);
+
+            // When transition ends, check if we're at the clone
+            track.addEventListener("transitionend", handleTransitionEnd);
+        }
+
+        function handleTransitionEnd() {
+            if (index === totalSlides) {
+            // Instantly jump to the real first slide
+            index = 0;
+            goToSlide(index, false);
+        }
+        isTransitioning = false;
+        track.removeEventListener("transitionend", handleTransitionEnd);
+    }
+
+    // Set initial background and position
+    goToSlide(index, false);
+
+    setInterval(nextSlide, 4000);
+});
+</script>
       </body>
 </html>
         
