@@ -55,9 +55,14 @@
             function updateSlide() {
                 index = (index + 1) % slides.length;
                 const imgSrc = slides[index].querySelector("img").src;
-                bg.style.backgroundImage = `url('${imgSrc}')`;
-
                 track.style.transform = `translateX(-${index * 33.333}%)`;
+                
+                bg.style.backgroundImage = `url('${imgSrc}')`;
+                document.body.style.setProperty("--bg-url", `url('${imgSrc}')`);
+                document.body.style.setProperty("--bg-color", `url('${imgSrc}')`);
+
+                document.querySelector("body").style.setProperty("--bg-url", `url('${imgSrc}')`);
+                document.styleSheets[0].insertRule(`body::before { background-image: url('${imgSrc}') !important; }`, 0);
             }
             
             document.addEventListener("DOMContentLoaded", () => {
