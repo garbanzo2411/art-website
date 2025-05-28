@@ -23,17 +23,16 @@
             <div class = "page-header">
                 <h1>Welcome to my Portfolio</h1>
             </div>
-            <div class = "slideshow-container">
-                <div class = "slide fade">
-                    <img src = "artworks/avapainting.jpg" alt = "Ava"/>
-                </div>
-
-                <div class = "slide fade">
-                    <img src = "artworks/buddiespainting.jpg" alt = "friends in war"/>
-                </div>
-
-                <div class = "slide fade">
-                    <img src = "artworks/housepainting.jpg" alt = "bosnian house painting"/>
+            <div class="slideshow-wrapper">
+                <div class="slideshow-background" id="slideshow-bg"></div>
+              
+                <div class="slideshow-container" id="slideshow-track">
+                  <div class="slide">
+                    <img src="artworks/avapainting.jpg" alt="Ava">
+                  </div>
+                  <div class="slide">
+                    <img src="artworks/housepainting.jpg" alt="Bosnian House">
+                  </div>
                 </div>
             </div>
         </main>
@@ -48,23 +47,27 @@
             </div>
         </footer>
         <script>
-            let slideIndex = 0;
+            let index = 0;
+            const slides = document.querySelectorAll(".slide");
+            const track = document.getElementById("slideshow-track");
+            const bg = document.getElementById("slideshow-bg");
+            
+            function updateSlide() {
+                index = (index + 1) % slides.length;
+                const imgSrc = slides[index].querySelector("img").src;
+                bg.style.backgroundImage = `url('${imgSrc}')`;
 
-            function showSlides() {
-                let slides = document.getElementsByClassName("slide");
-                for (let i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";
-                }
-                slideIndex++;
-                if (slideIndex > slides.length) {
-                    slideIndex = 1;
-                }
-                slides[slideIndex - 1].style.display = "block";
-                setTimeout(showSlides, 3000); 
+                track.style.transform = `translateX(-${index * 33.333}%)`;
             }
-            document.addEventListener("DOMContentLoaded", function() {
-                showSlides();
+            
+            document.addEventListener("DOMContentLoaded", () => {
+              // Set initial background
+              const firstImg = slides[0].querySelector("img").src;
+              bg.style.backgroundImage = `url('${firstImg}')`;
+            
+              setInterval(updateSlide, 4000); // Slide every 4s
             });
-        </script>
-    </body>
+            </script>
+      </body>
+</html>
         
