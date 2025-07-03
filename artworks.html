@@ -25,30 +25,41 @@
                 <h1>Gallery</h1>
             </div>
             <div class="gallery">
-                <div class="gallery-item">
+                <div class="gallery-item" data-title="Ava" data-description="A portrait of Ava in acrylic.">
                     <img src="artworks/avapainting.jpg" alt="Ava Painting">
                     <p>Ava</p>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item" data-title="Chess" data-description="A study of chess pieces in oil.">
                     <img src="artworks/chess.jpg" alt="Chess">
                     <p>Chess</p>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item" data-title="Tea and Irma" data-description="Cousins sharing a moment.">
                     <img src="artworks/cousins.jpg" alt="Tea and Irma">
                     <p>Tea and Irma</p>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item" data-title="Tank" data-description="A tank in a surreal landscape.">
                     <img src="artworks/tank.jpg" alt="Tank">
                     <p>Tank</p>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item" data-title="Balkan Birthday" data-description="Celebrating a birthday in Yugoslavia.">
                     <img src="artworks/yugoslavia.jpg" alt="Balkan Birthday">
                     <p>Balkan Birthday</p>
                 </div>
-                <div class="gallery-item">
+                <div class="gallery-item" data-title="Bosnian House" data-description="A traditional Bosnian house.">
                     <img src="artworks/housepainting.jpg" alt="Bosnian House">
                     <p>Bosnian House</p>
                 </div>
+            </div>
+
+            <!---Modal-->
+            <div id = "modal" class = "modal">
+                <span class = "modal-close" id = "modal-close">&times;</span>
+                <img class = "modal-img" id = "modal-img" src = "" alt = "">
+                <div class = modal-caption>
+                    <h2 id = "modal-title"></h2>
+                    <p id = "modal-desc"></p>
+                </div>
+            </div>
         </main>
 
         <footer class = "footer">
@@ -61,3 +72,37 @@
                 </div>
             </div>
         </footer>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('modal');
+            const modalImg = document.getElementById('modal-img');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDesc = document.getElementById('modal-desc');
+            const modalClose = document.getElementById('modal-close');
+
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    modalImg.src = this.querySelector('img').src;
+                    modalImg.alt = this.querySelector('img').alt;
+                    modalTitle.textContent = this.getAttribute('data-title');
+                    modalDesc.textContent = this.getAttribute('data-description');
+                    modal.classList.add('open');
+                });
+            });
+            modalClose.addEventListener('click', function() {
+                modal.classList.remove('open');
+            });
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('open');
+                }
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    modal.classList.remove('open');
+                }
+            });
+        });
+        </script>
+    </body>
+</html>
