@@ -1,32 +1,32 @@
 Matea Mihaljević - Artist Portfolio Website
 A modern, responsive portfolio website showcasing the artwork and creative vision of Matea Mihaljević. Built with clean HTML, CSS, and JavaScript to create an engaging visual experience that puts the artwork front and center.
 Show Image
-🎨 Features
-Visual Design
+## 🎨 Features
 
-Full-screen slideshow with automatic cycling through featured artworks
-Modern glassmorphism effects with backdrop blur and transparency
-Gradient backgrounds and smooth animations throughout
-Responsive grid layouts that adapt to all screen sizes
-Professional typography with proper visual hierarchy
+### Visual Design
+- **Full-screen slideshow** with automatic cycling through featured artworks
+- **Modern glassmorphism effects** with backdrop blur and transparency
+- **Gradient backgrounds** and smooth animations throughout
+- **Responsive grid layouts** that adapt to all screen sizes
+- **Professional typography** with proper visual hierarchy
 
-Interactive Elements
+### Interactive Elements
+- **Manual slideshow controls** with previous/next buttons
+- **Clickable indicators** for direct slide navigation  
+- **Animated statistics counters** that count up when scrolled into view
+- **Smooth hover effects** on artwork previews and buttons
+- **Dynamic header** that changes appearance on scroll
 
-Manual slideshow controls with previous/next buttons
-Clickable indicators for direct slide navigation
-Animated statistics counters that count up when scrolled into view
-Smooth hover effects on artwork previews and buttons
-Dynamic header that changes appearance on scroll
+### User Experience
+- **Mobile-first responsive design** 
+- **Fast loading times** with optimized assets
+- **Smooth scrolling** and page transitions
+- **Accessible navigation** with proper ARIA labels
+- **Cross-browser compatibility**
 
-User Experience
+## 📁 Project Structure
 
-Mobile-first responsive design
-Fast loading times with optimized assets
-Smooth scrolling and page transitions
-Accessible navigation with proper ARIA labels
-Cross-browser compatibility
-
-📁 Project Structure
+```
 matea-portfolio/
 ├── index.html              # Homepage with hero slideshow
 ├── about.html              # Artist biography and background
@@ -44,38 +44,41 @@ matea-portfolio/
 │   ├── yugoslavia.jpg
 │   └── housepainting.jpg
 └── README.md
-🛠️ Technologies Used
+```
 
-HTML5 - Semantic markup structure
-CSS3 - Modern styling with flexbox, grid, and custom properties
-Vanilla JavaScript - Interactive features and animations
-Font Awesome - Icon library for social media and UI elements
-CSS Custom Properties - Maintainable theming system
-Intersection Observer API - Scroll-triggered animations
+## 🛠️ Technologies Used
 
-📱 Responsive Design
+- **HTML5** - Semantic markup structure
+- **CSS3** - Modern styling with flexbox, grid, and custom properties
+- **Vanilla JavaScript** - Interactive features and animations
+- **Font Awesome** - Icon library for social media and UI elements
+- **CSS Custom Properties** - Maintainable theming system
+- **Intersection Observer API** - Scroll-triggered animations
+
+## 📱 Responsive Design
+
 The website is fully responsive and tested across:
+- **Desktop** (1200px+)
+- **Tablet** (768px - 1199px) 
+- **Mobile** (320px - 767px)
 
-Desktop (1200px+)
-Tablet (768px - 1199px)
-Mobile (320px - 767px)
+### Key Responsive Features
+- Flexible grid layouts that stack on smaller screens
+- Scalable typography using `clamp()` functions
+- Touch-friendly button sizes for mobile
+- Optimized images for different screen densities
 
-Key Responsive Features
+## ⚡ Performance
 
-Flexible grid layouts that stack on smaller screens
-Scalable typography using clamp() functions
-Touch-friendly button sizes for mobile
-Optimized images for different screen densities
+- **Optimized images** for fast loading
+- **Minimal JavaScript** with no heavy frameworks
+- **CSS animations** using hardware acceleration
+- **Efficient selectors** and organized stylesheets
 
-⚡ Performance
+## 🎨 Color Palette
 
-Optimized images for fast loading
-Minimal JavaScript with no heavy frameworks
-CSS animations using hardware acceleration
-Efficient selectors and organized stylesheets
-
-🎨 Color Palette
-css:root {
+```css
+:root {
   --primary-color: #2c3e50;    /* Dark blue-gray */
   --accent-color: #3498db;     /* Bright blue */
   --text-color: #2c3e50;       /* Dark text */
@@ -84,64 +87,27 @@ css:root {
   --surface: #f8fafc;         /* Light surface */
   --border: #e2e8f0;          /* Light border */
 }
-📖 Usage
-Local Development
+```
 
-Clone the repository:
-bashgit clone https://github.com/yourusername/matea-portfolio.git
-cd matea-portfolio
+## 🚀 Usage
 
-Open in browser:
-bash# Using Python (if installed)
-python -m http.server 3000
+### Local Development
 
-# Simply open index.html in your browser
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/matea-portfolio.git
+   cd matea-portfolio
+   ```
 
-Start developing:
-
-Edit HTML files for content changes
-Modify css/styles.css for styling updates
-Update js/script.js for functionality changes
-
-
-
-Adding New Artworks
-
-Add image files to the artworks/ directory
-Update the slideshow section in index.html:
-html<img src="artworks/your-new-artwork.jpg" alt="Description" data-title="Artwork Title">
-
-Add to the gallery in artworks.html
-
-Customization
-The website uses CSS custom properties for easy theming. Update the :root variables in styles.css to change:
-
-Color scheme
-Font sizes
-Spacing values
-Animation timings
-
-🚀 Future Enhancements
-Planned features and improvements:
-
- 
- Advanced image lazy loading
- Contact form backend integration
- Blog/news section
- Artwork filtering and search
- Client testimonials section
- Multi-language support
- SEO optimizations
- Progressive Web App features
-
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
-🙏 Acknowledgments
-
-Font Awesome for the beautiful icons
-Google Fonts for web typography
-Unsplash/Pexels for any stock images used during development
-Modern CSS techniques inspired by contemporary web design trends
-
+2. **Open in browser:**
+   ```bash
+   # Using Python (if installed)
+   python -m http.server 3000
+   
+   # Using Node.js (if installed)
+   npx serve .
+   
+   # Or simply open index.html in your browser
+   ```
 
 Built with ❤️ by Jacob Lazzarini | © 2025 All Rights Reserved
