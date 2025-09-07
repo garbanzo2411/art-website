@@ -95,10 +95,7 @@ Open in browser:
 bash# Using Python (if installed)
 python -m http.server 3000
 
-# Using Node.js (if installed)
-npx serve .
-
-# Or simply open index.html in your browser
+# Simply open index.html in your browser
 
 Start developing:
 
