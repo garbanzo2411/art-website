@@ -1,115 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name = "viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Matea Mihaljević</title>
-        <link href="css/styles.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    </head>
-    <body>
-        <header class = "header">
-            <div class = "logo-container">
-                <a href = "index.html" class = "logo">Matea Mihaljevic</a>
-            </div>
-            <nav class = "nav-links">
-                <a href = "index.html" class = "nav-link">Home</a>
-                <a href = "about.html" class = "nav-link">About</a>
-                <a href = "artworks.html" class = "nav-link">Artworks</a>
-                <a href = "contact.html" class = "nav-link">Contact</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matea Mihaljević - Artist & Creator</title>
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="logo">Matea Mihaljević</a>
+            <nav class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="artworks.html" class="nav-link">Artworks</a>
+                <a href="contact.html" class="nav-link">Contact</a>
             </nav>
-        </header>
-        <main>
-            <div class = "page-header">
-                <h1>Welcome to my Portfolio</h1>
-            </div>
-            <div class="slideshow-wrapper">
-                <div class="slideshow-background" id="slideshow-bg"></div>
-              
-                <div class="slideshow-container" id="slideshow-track">
-                  <div class="slide">
-                    <img src="artworks/avapainting.jpg" alt="Ava">
-                  </div>
-                  <div class="slide">
-                    <img src="artworks/chess.jpg" alt="Chess">
-                  </div>
-                  <div class="slide">
-                    <img src="artworks/cousins.jpg" alt="Tea and Irma">
-                  </div>
-                  <div class="slide">
-                    <img src="artworks/tank.jpg" alt="Tank">
-                  </div>
-                  <div class="slide">
-                    <img src="artworks/yugoslavia.jpg" alt="Balkan Birthday">
-                  </div>
-                  <div class="slide">
-                    <img src="artworks/housepainting.jpg" alt="Bosnian House">
-                  </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Slideshow -->
+        <section class="hero">
+            <div class="slideshow-background" id="slideshow-bg"></div>
+            
+            <div class="hero-content">
+                <h1 class="hero-title">Matea Mihaljević</h1>
+                <p class="hero-subtitle">Artist & Visual Storyteller</p>
+                <p class="hero-description">
+                    This is a portfolio website showcasing my artwork, creative journey, and ways to connect with me.
+                </p>
+                <div class="cta-buttons">
+                    <a href="artworks.html" class="cta-btn primary">View My Work</a>
+                    <a href="contact.html" class="cta-btn secondary">Let's Connect</a>
                 </div>
             </div>
-        </main>
-        <footer class = "footer">
-            <div class = "footer-content">
-                <p>&copy; 2025 Matea Mihaljevic. All rights reserved.</p>
-                <div class = "social-icons">
-                    <a href = "https://www.instagram.com/mihaljevicmatea/" target = "_blank" class = "social-icon"><i class = "fab fa-instagram"></i></a>
-                    <a href = "https://www.facebook.com/mateamihaljevic" target = "_blank" class = "social-icon"><i class = "fab fa-facebook"></i></a>
-                    <a href = "https://x.com/MihaljevicMatea" target = "_blank" class = "social-icon"><i class = "fab fa-x"></i></a>
-                </div>
+
+            <!-- Slideshow Controls -->
+            <div class="slideshow-controls">
+                <button class="control-btn" id="prevBtn" aria-label="Previous">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="control-btn" id="nextBtn" aria-label="Next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
-        </footer>
-        <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const track = document.getElementById("slideshow-track");
-            const slides = document.querySelectorAll(".slide");
-            const bg = document.getElementById("slideshow-bg");
-            let index = 0;
-            let isTransitioning = false;
 
-            // Clone the first slide and append it to the end
-            const firstClone = slides[0].cloneNode(true);
-            track.appendChild(firstClone);
+            <!-- Slideshow Indicators -->
+            <div class="slideshow-indicators" id="indicators"></div>
 
-            const totalSlides = slides.length; // original slides count
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
 
-            function goToSlide(i, animate = true) {
-                if (animate) {
-                    track.style.transition = "transform 1s ease-in-out";
-                } else {
-                    track.style.transition = "none";
-            }
-            track.style.transform = `translateX(-${i * (100 / 3)}%)`;
-            // Update background
-            const imgSrc = track.children[i].querySelector("img").src;
-            bg.style.backgroundImage = `url('${imgSrc}')`;
-        }
+            <!-- Hidden slideshow images -->
+            <div style="display: none;">
+                <img src="artworks/avapainting.jpg" alt="Ava" data-title="Portrait of Ava">
+                <img src="artworks/chess.jpg" alt="Chess" data-title="Chess Masterpiece">
+                <img src="artworks/cousins.jpg" alt="Tea and Irma" data-title="Tea and Irma">
+                <img src="artworks/tank.jpg" alt="Tank" data-title="Tank Study">
+                <img src="artworks/yugoslavia.jpg" alt="Balkan Birthday" data-title="Balkan Birthday">
+                <img src="artworks/housepainting.jpg" alt="Bosnian House" data-title="Bosnian House">
+            </div>
+        </section>
 
-        function nextSlide() {
-            if (isTransitioning) return;
-            isTransitioning = true;
-            index++;
-            goToSlide(index);
+        <!-- Featured Work Preview -->
+        <section class="preview-section">
+            <div class="preview-container">
+                <h2 class="preview-title">Featured Artworks</h2>
+                <p class="preview-description">
+                    Some of my favorite pieces!
+                
+                <div class="artwork-grid">
+                    <div class="artwork-card">
+                        <img src="artworks/avapainting.jpg" alt="Ava" class="artwork-image">
+                        <div class="artwork-overlay">
+                            <span>Portrait of Ava</span>
+                        </div>
+                    </div>
+                    <div class="artwork-card">
+                        <img src="artworks/chess.jpg" alt="Chess" class="artwork-image">
+                        <div class="artwork-overlay">
+                            <span>Chess Masterpiece</span>
+                        </div>
+                    </div>
+                    <div class="artwork-card">
+                        <img src="artworks/cousins.jpg" alt="Tea and Irma" class="artwork-image">
+                        <div class="artwork-overlay">
+                            <span>Tea and Irma</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="artworks.html" class="cta-btn primary">View Full Gallery</a>
+            </div>
+        </section>
+    </main>
 
-            // When transition ends, check if we're at the clone
-            track.addEventListener("transitionend", handleTransitionEnd);
-        }
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Matea Mihaljević. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/mihaljevicmatea/" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/mateamihaljevic" target="_blank" class="social-icon">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://x.com/MihaljevicMatea" target="_blank" class="social-icon">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
 
-        function handleTransitionEnd() {
-            if (index === totalSlides) {
-            // Instantly jump to the real first slide
-            index = 0;
-            goToSlide(index, false);
-        }
-        isTransitioning = false;
-        track.removeEventListener("transitionend", handleTransitionEnd);
-    }
-
-    // Set initial background and position
-    goToSlide(index, false);
-
-    setInterval(nextSlide, 4000);
-});
-</script>
+    <script src="js/script.js"></script>
 </body>
 </html>
-        
