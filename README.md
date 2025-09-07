@@ -79,14 +79,14 @@ The website is fully responsive and tested across:
 
 ```css
 :root {
-  --primary-color: #007b55;
-  --secondary-color: #005f40;
-  --background-color: #f0f0f0;
-  --text-color: #333;
-  --text-light: #7f8c8d;
-  --background:  #ffffff;
-  --surface: #f8fafc;
-  --border: #e2e8f0;
+  --primary-color: #007b55;         /* A deep green (teal/emerald) */
+  --secondary-color: #005f40;      /* A darker green (forest/evergreen) */
+  --background-color: #f0f0f0;    /* Light gray/off-white */    
+  --text-color: #333;            /* Very dark gray (almost black) */
+  --text-light: #7f8c8d;        /* Muted gray */
+  --background:  #ffffff;      /* White */
+  --surface: #f8fafc;         /* Very light blue/gray */
+  --border: #e2e8f0;         /* Light blue-gray */
 }
 ```
 
