@@ -29,7 +29,6 @@ Show Image
 ```
 matea-portfolio/
 ├── index.html              # Homepage with hero slideshow
-├── about.html              # Artist biography and background
 ├── artworks.html           # Gallery of all artworks
 ├── contact.html            # Contact form and information
 ├── css/
