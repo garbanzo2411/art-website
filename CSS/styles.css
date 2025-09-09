@@ -483,6 +483,98 @@ body {
     opacity: 0.7;
 }
 
+/* About Section on Home Page */
+.about-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  position: relative;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-content {
+  animation: fadeInLeft 1s ease-out;
+}
+
+.about-visual {
+  animation: fadeInRight 1s ease-out;
+  position: relative;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  position: relative;
+}
+
+.about-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border-radius: 2px;
+}
+
+.about-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.about-highlight {
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(0, 123, 85, 0.1));
+  padding: 2rem;
+  border-radius: 20px;
+  border-left: 5px solid var(--accent-color);
+  margin: 2rem 0;
+  box-shadow: var(--shadow);
+}
+
+.about-image-container {
+  position: relative;
+  border-radius: 30px;
+  box-shadow: var(--shadow-hover);
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  padding: 3rem;
+  text-align: center;
+}
+
+
 
 .gallery {
   display: grid;
@@ -566,18 +658,6 @@ body {
 
 .modal-close:hover {
   color: #ffb3b3;
-}
-
-.about-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem;
-  line-height: 1.7;
-}
-
-.about-container h1 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
 }
 
 .contact-container {
