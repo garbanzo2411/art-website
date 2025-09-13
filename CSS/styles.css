@@ -7,6 +7,7 @@
 :root {
   --primary-color: #007b55;
   --secondary-color: #005f40;
+  --accent-color: #2980b9;
   --background-color: #f0f0f0;
   --text-color: #333;
   --text-light: #7f8c8d;
@@ -192,7 +193,7 @@ body {
     letter-spacing: 0.5px;
   }
 
-  .cta-btn-primary {
+  .cta-btn.primary {
     background: linear-gradient(135deg, var(--accent-color), #2980b9);
     color: white;
   }
