@@ -19,38 +19,124 @@
             </nav>
         </header>
 
-        <main>
-            <div class = "contact-container">
-                <h1>Contact Me!</h1>
-                <form name = "contact" method = "POST" data-netlify = "true">
-                    <input type = "hidden" name = "form-name" value = "contact">
-                    <input type = "text" name = "name" placeholder = "Your Name" required>
-                    <input type = "email" name = "email" placeholder = "Your Email" required>
-                    <input type = "text" name = "subject" placeholder = "Subject (e.g Commision Inquiry)">
-                    <textarea name = "message" rows = "6" placeholder = "Your Message" required></textarea>
-                    <button type = "submit"> Send Message</button>
-                </form>
+         <main>
+        <section class="page-header">
+            <h1>Let's Connect</h1>
+            <p class="page-subtitle">
+                I'd love to hear from you! Whether you're interested in my work, 
+                have a commission inquiry, or just want to say hello.
+            </p>
+        </section>
 
-                <div class = "social-highlight">
-                    <h2>Follow & Connect</h2>
-                   <div class="highlighted-socials">
-                    <a href="https://www.instagram.com/mihaljevicmatea/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/mateamihaljevic" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="https://x.com/MihaljevicMatea" target="_blank" title="X (Twitter)"><i class="fab fa-x"></i></a>
-                    <a href="mailto:matea@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+        <section class="contact-section">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>
+                        Ready to collaborate? Interested in commissioning a piece? 
+                        Or perhaps you'd like to learn more about my artistic journey 
+                        and the stories behind my work. I'm always excited to connect 
+                        with fellow art enthusiasts and share the passion for Bosnian culture.
+                    </p>
+
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-method-info">
+                                <h3>Email Me</h3>
+                                <p>matea@example.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-method-info">
+                                <h3>Location</h3>
+                                <p>Salt Lake City, Utah</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fas fa-clock"></i>
+                            <div class="contact-method-info">
+                                <h3>Response Time</h3>
+                                <p>Usually within 24-48 hours</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-highlight">
+                        <h3>Follow My Journey</h3>
+                        <div class="highlighted-socials">
+                            <a href="https://www.instagram.com/mihaljevicmatea/" target="_blank" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://www.facebook.com/mateamihaljevic" target="_blank" title="Facebook">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://x.com/MihaljevicMatea" target="_blank" title="X (Twitter)">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+                            <a href="mailto:matea@example.com" title="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <div class="form-header">
+                        <h2>Send a Message</h2>
+                        <p>Fill out the form below and I'll get back to you soon!</p>
+                    </div>
+
+                    <form name="contact" method="POST" data-netlify="true">
+                        <input type="hidden" name="form-name" value="contact">
+                        
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-input" placeholder="e.g., Commission Inquiry, General Question">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" class="form-input" rows="6" placeholder="Tell me about your project, question, or just say hello..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
                 </div>
             </div>
-        </main>
+        </section>
+    </main>
 
-        <footer class = "footer">
-            <div class = "footer-content">
-                <p>&copy; 2025 Matea Mihaljevic. All rights reserved.</p>
-                <div class = "social-icons">
-                <a href="https://www.instagram.com/mihaljevicmatea/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/mateamihaljevic" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
-                <a href="https://x.com/MihaljevicMatea" target="_blank" class="social-icon"><i class="fab fa-x"></i></a>
-                </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Matea Mihaljević. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/mihaljevicmatea/" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/mateamihaljevic" target="_blank" class="social-icon">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://x.com/MihaljevicMatea" target="_blank" class="social-icon">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
             </div>
-        </footer>
-    </body>
+        </div>
+    </footer>
+
+    <script src="js/contactpagescript.js"></script>
+</body>
 </html>
