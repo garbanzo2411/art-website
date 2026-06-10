@@ -346,11 +346,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(52, 152, 219, 0.9),
-    rgba(44, 62, 80, 0.9)
-  );
+  background: transparent;
   opacity: 0;
   transition: all 0.3s ease;
   display: flex;
@@ -363,6 +359,11 @@ body {
 
 .artwork-card:hover .artwork-overlay {
   opacity: 1;
+}
+
+/* Hide preview titles/overlays so homepage shows only images */
+.artwork-overlay {
+  display: none !important;
 }
 
 .footer {
@@ -697,6 +698,9 @@ body {
 .gallery-item-content {
   padding: 1.5rem;
   position: relative;
+  text-align: center;
+  /* Hide titles so only the artwork image is visible */
+  display: none;
 }
 
 .gallery-item h3 {
@@ -718,11 +722,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 123, 85, 0.9),
-    rgba(52, 152, 219, 0.9)
-  );
+  background: transparent;
   opacity: 0;
   transition: all 0.4s ease;
   display: flex;
@@ -815,6 +815,8 @@ body {
   text-align: center;
   max-width: 600px;
   box-shadow: var(--shadow);
+  /* Hide caption in modal so popup shows only the artwork image */
+  display: none;
 }
 
 .modal-caption h2 {
