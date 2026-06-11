@@ -1,6 +1,6 @@
 Matea Mihaljević - Artist Portfolio Website
 A modern, responsive portfolio website showcasing the artwork and creative vision of Matea Mihaljević. Built with clean HTML, CSS, and JavaScript to create an engaging visual experience that puts the artwork front and center.
-Show Image
+
 ## 🎨 Features
 
 ### Visual Design
