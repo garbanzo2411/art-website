@@ -591,16 +591,21 @@ body {
 }
 
 .about-image-container {
-  position: relative;
-  border-radius: 30px;
-  box-shadow: var(--shadow-hover);
-  background: linear-gradient(
-    135deg,
-    var(--primary-color),
-    var(--accent-color)
-  );
-  padding: 3rem;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
   text-align: center;
+}
+
+.about-image {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: var(--shadow-hover);
+  display: block;
 }
 
 /* Page Header for Gallery Page */
