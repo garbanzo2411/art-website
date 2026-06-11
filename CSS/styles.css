@@ -5,17 +5,17 @@
 }
 
 :root {
-  --primary-color: #007b55;
-  --secondary-color: #005f40;
-  --accent-color: #2980b9;
-  --background-color: #f0f0f0;
-  --text-color: #333;
-  --text-light: #7f8c8d;
+  --primary-color: #000000;
+  --secondary-color: #1a1a1a;
+  --accent-color: #ffffff;
+  --background-color: #f5f5f5;
+  --text-color: #000000;
+  --text-light: #666666;
   --background: #ffffff;
-  --surface: #f8fafc;
-  --border: #e2e8f0;
-  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-  --shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+  --surface: #f0f0f0;
+  --border: #d0d0d0;
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+  --shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.25);
 }
 
 body {
@@ -124,8 +124,8 @@ body {
   height: 100%;
   background: linear-gradient(
     135deg,
-    rgba(44, 62, 80, 0.8) 0%,
-    rgba(52, 152, 219, 0.6) 100%
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(26, 26, 26, 0.75) 100%
   );
 }
 
@@ -154,7 +154,7 @@ body {
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 800;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #ffffff, #e8f4ff);
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -201,13 +201,14 @@ body {
 }
 
 .cta-btn.primary {
-  background: linear-gradient(135deg, var(--accent-color), #2980b9);
+  background: linear-gradient(135deg, #000000, #1a1a1a);
   color: white;
 }
 
 .cta-btn.primary:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
 }
 
 .cta-btn.secondary {
@@ -282,7 +283,7 @@ body {
 /* Preview Section */
 .preview-section {
   padding: 6rem 2rem;
-  background: linear-gradient(135deg, #f8fafc 0%, #e8f4ff 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
 }
 
 .preview-container {
@@ -396,7 +397,7 @@ body {
 .social-icon {
   width: 45px;
   height: 45px;
-  background: rgba(0, 123, 85, 0.1);
+  background: rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
