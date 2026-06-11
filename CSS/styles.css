@@ -367,9 +367,10 @@ body {
 }
 
 .footer {
-  background-color: var(--primary-color);
-  color: white;
+  background-color: white;
+  color: var(--primary-color);
   padding: 3rem 2rem 2rem;
+  border-top: 2px solid var(--border);
 }
 
 .footer-content {
@@ -383,7 +384,8 @@ body {
 }
 
 .footer p {
-  opacity: 0, 8;
+  color: var(--primary-color);
+  opacity: 0.8;
 }
 
 .social-icons {
@@ -394,19 +396,21 @@ body {
 .social-icon {
   width: 45px;
   height: 45px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 123, 85, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--primary-color);
   font-size: 1.2rem;
   text-decoration: none;
   transition: all 0.3s ease;
+  border: 2px solid var(--primary-color);
 }
 
 .social-icon:hover {
-  background: var(--accent-color);
+  background: var(--primary-color);
+  color: white;
   transform: translateY(-3px);
 }
 
