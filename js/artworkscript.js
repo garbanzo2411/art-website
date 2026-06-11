@@ -1,52 +1,83 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
+  const galleryItems = document.querySelectorAll(".gallery-item");
+
   const modal = document.getElementById("modal");
   const modalImg = document.getElementById("modal-img");
   const modalTitle = document.getElementById("modal-title");
   const modalDesc = document.getElementById("modal-desc");
   const modalClose = document.getElementById("modal-close");
 
-  // Open modal when gallery item is clicked
-  document.querySelectorAll(".gallery-item").forEach((item) => {
-    item.addEventListener("click", function () {
-      const img = this.querySelector("img");
-      modalImg.src = img.src;
-      modalImg.alt = img.alt;
-      modalTitle.textContent = this.getAttribute("data-title");
-      modalDesc.textContent = this.getAttribute("data-description");
+  const nextBtn = document.getElementById("next-btn");
+  const prevBtn = document.getElementById("prev-btn");
+
+  let currentIndex = 0;
+
+  function showArtwork(index) {
+    const item = galleryItems[index];
+    const img = item.querySelector("img");
+
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+
+    modalTitle.textContent = item.dataset.title || "";
+    modalDesc.textContent = item.dataset.description || "";
+  }
+
+  galleryItems.forEach((item, index) => {
+    item.addEventListener("click", () => {
+      currentIndex = index;
+      showArtwork(currentIndex);
       modal.classList.add("open");
-      document.body.style.overflow = "hidden";
     });
   });
 
-  // Close modal
-  function closeModal() {
+  nextBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    currentIndex++;
+
+    if (currentIndex >= galleryItems.length) {
+      currentIndex = 0;
+    }
+
+    showArtwork(currentIndex);
+  });
+
+  prevBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    currentIndex--;
+
+    if (currentIndex < 0) {
+      currentIndex = galleryItems.length - 1;
+    }
+
+    showArtwork(currentIndex);
+  });
+
+  modalClose.addEventListener("click", () => {
     modal.classList.remove("open");
-    document.body.style.overflow = "auto";
-  }
+  });
 
-  modalClose.addEventListener("click", closeModal);
-
-  modal.addEventListener("click", function (e) {
+  modal.addEventListener("click", (e) => {
     if (e.target === modal) {
-      closeModal();
+      modal.classList.remove("open");
     }
   });
 
-  document.addEventListener("keydown", function (e) {
+  document.addEventListener("keydown", (e) => {
+    if (!modal.classList.contains("open")) return;
+
     if (e.key === "Escape") {
-      closeModal();
+      modal.classList.remove("open");
     }
-  });
 
-  // Header scroll effect
-  window.addEventListener("scroll", () => {
-    const header = document.querySelector(".header");
-    if (window.scrollY > 100) {
-      header.style.background = "rgba(255, 255, 255, 0.98)";
-      header.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.1)";
-    } else {
-      header.style.background = "rgba(255, 255, 255, 0.95)";
-      header.style.boxShadow = "none";
+    if (e.key === "ArrowRight") {
+      nextBtn.click();
+    }
+
+    if (e.key === "ArrowLeft") {
+      prevBtn.click();
     }
   });
 });
