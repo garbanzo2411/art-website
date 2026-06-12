@@ -517,17 +517,19 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
+  gap: 1.5rem;
+  align-items: start;
 }
 
 .about-content {
   animation: fadeInLeft 1s ease-out;
+  margin-bottom: 0;
 }
 
 .about-visual {
   animation: fadeInRight 1s ease-out;
   position: relative;
+  margin-top: 0;
 }
 
 @keyframes fadeInLeft {
@@ -555,7 +557,7 @@ body {
 .about-title {
   font-size: 3rem;
   font-weight: 800;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: var(--primary-color);
   position: relative;
 }
@@ -611,6 +613,11 @@ body {
   border-radius: 20px;
   box-shadow: var(--shadow-hover);
   display: block;
+}
+
+.artist-statement-section {
+  grid-column: 1 / -1;
+  margin-top: 1rem;
 }
 
 /* Page Header for Gallery Page */
