@@ -623,21 +623,14 @@ body {
 /* Page Header for Gallery Page */
 .page-header {
   padding: 5rem 2rem 0.5rem;
-  background: linear-gradient(135deg, #f8fafc 0%, #e8f4ff 100%);
+  background: white;
   text-align: center;
   position: relative;
   overflow: hidden;
-} 
+}
 
 .page-header::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(52, 152, 219, 0.1) 0%, transparent 70%);
-  animation: float 20s ease-in-out infinite;
+  display: none;
 }
 
 @keyframes float {
@@ -646,13 +639,14 @@ body {
 }
 
 .page-header h1 {
-  font-size: 2 rem;
+  font-size: 2rem;
   font-weight: 800;
   margin-bottom: 0;
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: black;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
   position: relative;
   z-index: 2;
 }
