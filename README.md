@@ -1,5 +1,5 @@
 Matea Mihaljević - Artist Portfolio Website
-A modern, responsive portfolio website showcasing the artwork and creative vision of Matea Mihaljević. Built with clean HTML, CSS, and JavaScript to create an engaging visual experience that puts the artwork front and center.
+A modern, responsive portfolio website showcasing the artwork and creative vision of Matea Mihaljević. Built with clean HTML, CSS, and JavaScript to create an engaging visual experience that puts the artwork front and center. Website is now live: https://minteart.netlify.app
 
 ## 🎨 Features
 
